@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^5.5.4
         version: 5.5.4(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.36.0)(typescript@5.7.2)(yaml@2.6.1)
+      daisyui:
+        specifier: ^5.0.9
+        version: 5.0.9
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15
@@ -874,6 +877,9 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
+  daisyui@5.0.9:
+    resolution: {integrity: sha512-RsaehHh45f+0shWgZZaOY09/8eOae2voRsqJCD71j9yrnYgcke0Nj5ys0ZxrW4SPcc4+q96kWyJu0Z8P1zZdoA==}
+
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
@@ -1300,7 +1306,6 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
-    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@2.1.0:
@@ -3191,6 +3196,8 @@ snapshots:
       uncrypto: 0.1.3
 
   cssesc@3.0.0: {}
+
+  daisyui@5.0.9: {}
 
   data-uri-to-buffer@4.0.1: {}
 
