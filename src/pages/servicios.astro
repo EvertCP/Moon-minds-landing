@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../sections/NavBar.astro';
+import Footer from '../sections/Footer.astro';
+---
+
+<Layout>
+    <NavBar />
+    <main class="py-1 mt-10">
+        
+        <section class="max-w-screen h-screen mx-auto px-4 sm:px-6 lg:px-8 mt-20 bg-cover bg-center relative" style="background-image: url('/src/assets/moon-hero-services.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 text-center py-32">
+                <h2 class="text-white leading-normal flex justify-center items-center mt-40 font-light text-8xl mb-12">Te ofrecemos soluciones personalizadas</h2>
+                <a href="/contacto" class="bg-slate-700 text-white text-4xl px-12 py-4 rounded-md m-4">Cotiza tu proyecto</a>
+            </div>
+        </section>
+        
+        <section class="bg-gradient-to-r from-gray-800 to-black text-white py-16">
+            <h2 class="leading-normal font-light text-8xl flex justify-center mb-12 mt-12">¿Por qué trabajar con nosotros?</h2>
+            <p class="leading-normal font-light text-4xl m-4 flex justify-center mb-12 mt-12">Somos innovación centrada en el usuario. Combinamos Design Thinking y metodologías Ágiles para crear soluciones rápidas, efectivas y orientadas a las necesidades reales de tus usuarios.</p>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <img src="/src/assets/grafico-de-barras.png" alt="Icono de Resultados" class="mx-auto w-40 h-40">
+                    </div>
+                    <h3 class="text-4xl font-semibold mb-2">Resultados relevantes y de Alto Valor</h3>
+                    <p>Nuestro enfoque garantiza productos y servicios que resuelven problemas complejos y aportan verdadero valor desde la primera iteración.</p>
+                </div>
+                <div class="text-center">
+                    <div class="mb-4">
+                        <img src="/src/assets/ajustes.png" alt="Icono de Agilidad" class="mx-auto w-40 h-40">
+                    </div>
+                    <h3 class="text-4xl font-semibold mb-2">Agilidad que reduce costos y riesgos</h3>
+                    <p>Detectamos y solucionamos problemas desde las primeras etapas, ahorrando tiempo y evitando gastos innecesarios en correcciones tardías.</p>
+                </div>
+                <div class="text-center">
+                    <div class="mb-4">
+                        <img src="/src/assets/beneficios.png" alt="Icono de Adaptabilidad" class="mx-auto w-40 h-40">
+                    </div>
+                    <h3 class="text-4xl font-semibold mb-2">Adaptabilidad y mejora continua</h3>
+                    <p>Con datos de entrega incrementales, ajustamos nuestras soluciones en función de las necesidades cambiantes de tu negocio y tus clientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-slate-600 leading-normal font-light text-8xl flex justify-center mb-12">Nuestros Servicios</h2>
+            <p class="text-slate-600 leading-normal font-light text-4xl m-4 flex justify-center mb-12 mt-12">Elevaremos tu marca por un ciclo donde analizaremos, crearemos y potenciaremos tu producto para generar los resultados esperados.</p>
+            
+            <div class="flex flex-wrap justify-center gap-10 lg:gap-10 m-6 lg:m-2 lg:px-40">
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Branding</h3>
+                    <p class="text-center px-4">Nos especializamos en crear una identidad de marca única que represente a tu empresa. Esto incluye el diseño de logotipos, selección de colores, tipografías y otros elementos visuales que harán que tu marca se destaque.</p>
+                </div>
+
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Desarrollo Web</h3>
+                    <p class="text-center px-4">Desarrollamos sitios web modernos y responsivos que no solo son visualmente atractivos, sino también funcionales y optimizados para ofrecer la mejor experiencia de usuario. Utilizamos las últimas tecnologías para asegurar que tu sitio web sea rápido y seguro.</p>
+                </div>
+
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Análisis de Datos</h3>
+                    <p class="text-center px-4">Proveemos servicios de análisis de datos para ayudarte a tomar decisiones informadas. Utilizamos herramientas avanzadas para interpretar los datos de tu negocio y ofrecerte insights valiosos que impulsen tu crecimiento.</p>
+                </div>
+
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Publicidad</h3>
+                    <p class="text-center px-4">Creamos campañas publicitarias efectivas que te ayudarán a alcanzar tus objetivos de marketing. Desde anuncios en redes sociales hasta campañas de Google Ads, te ayudamos a llegar a tu audiencia objetivo de manera eficiente.</p>
+                </div>
+
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Servicio Técnico</h3>
+                    <p class="text-center px-4">Nuestro equipo de expertos está disponible para ofrecer soporte técnico de alta calidad. Ya sea que necesites ayuda con hardware, software o cualquier otro aspecto técnico, estamos aquí para asistirte.</p>
+                </div>
+
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Asesoramiento</h3>
+                    <p class="text-center px-4">Ofrecemos asesoramiento estratégico para ayudarte a alcanzar tus metas empresariales. Nuestro equipo te guiará en la toma de decisiones importantes y te proporcionará estrategias personalizadas para el éxito.</p>
+                </div>
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Desarrollo de Software</h3>
+                    <p class="text-center px-4">Desarrollamos software personalizado que resuelve tus desafíos empresariales. Desde aplicaciones web hasta soluciones de IA, creemos en la innovación para impulsar tu crecimiento.</p>
+                </div>
+                <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+                    <h3 class="text-2xl font-semibold text-center p-4">Sistemas ERP</h3>
+                    <p class="text-center px-4">Desarrollamos sistemas ERP personalizados que optimizan tus procesos empresariales. Creemos en la automatización para impulsar tu eficiencia.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>

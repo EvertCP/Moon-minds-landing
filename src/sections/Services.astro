@@ -1,92 +1,138 @@
-<div>
-    <h2 class="text-slate-600 leading-normal font-light text-6xl flex justify-center">Nuestros servicios</h2>
-    <span class="text-slate-600 leading-normal font-light text-2xl m-4 flex justify-center">Elevaremos tu marca por un ciclo donde analizaremos, crearemos y potenciaremos tu producto para generar los resultados esperados.</span>
+---
+import { Image } from "astro:assets";
+---
+
+<div data-theme="light">
+    <h2 class="text-slate-600 leading-normal font-light text-8xl flex justify-center">Nuestros servicios</h2>
+    <span class="text-slate-600 leading-normal font-light text-4xl m-4 flex justify-center">Elevaremos tu marca por un ciclo donde analizaremos, crearemos y potenciaremos tu producto para generar los resultados esperados.</span>
 
     <div class="flex flex-wrap justify-center gap-10 lg:gap-10 m-6 lg:m-2 lg:px-40">
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Branding
-              </h5>
-              <p class=" hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div>
-          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Diseno Web
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                Nos encargamos del diseno de tu pagina web.
-              </p>
-            </div>
-          </div><div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Andalisis de Datos
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div><div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Publicidad
-              </h5>
-              <p class=" hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div><div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Desarrollo Web
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div><div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Servicio Tecnico
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div><div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Asesoria de equipos
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
-            </div>
-          </div>
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                Asesoramiento
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-2" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Branding</label>         
+            <input type="checkbox" id="modal-2" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Nos encargamos del branding de tu marca</h3>
+                    <p class="py-4">Te ayudamos a crear un branding que represente tu marca.</p>
+                    <p>Esto puede incluir logos, colores, tipografías, imágenes, y otros elementos visuales que ayudan a identificar y diferenciar tu marca.</p>
+                    <div class="modal-action">
+                        <label for="modal-2" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-2"></label>
             </div>
         </div>
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
-            <div class="p-4">
-              <h5 class="mb-2 text-slate-800 text-xl font-semibold">
-                SEO
-              </h5>
-              <p class="hidden text-slate-600 leading-normal font-light">
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-              </p>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-3" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Diseño Web</label>
+            <input type="checkbox" id="modal-3" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Diseño Web Profesional</h3>
+                    <p class="py-4">Nos encargamos del diseño de tu página web.</p>
+                    <p>Creamos sitios web modernos, responsivos y optimizados para brindar la mejor experiencia a tus usuarios.</p>
+                    <div class="modal-action">
+                        <label for="modal-3" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-3"></label>
             </div>
-          </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-4" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Análisis de Datos</label>
+            <input type="checkbox" id="modal-4" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Análisis de Datos Avanzado</h3>
+                    <p class="py-4">Analizamos los datos de tu negocio para obtener insights valiosos.</p>
+                    <p>Utilizamos herramientas modernas para transformar datos en decisiones estratégicas que impulsen tu crecimiento.</p>
+                    <div class="modal-action">
+                        <label for="modal-4" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-4"></label>
+            </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-5" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Publicidad</label>
+            <input type="checkbox" id="modal-5" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Publicidad Efectiva</h3>
+                    <p class="py-4">Creamos campañas publicitarias que te ayuden a alcanzar tus objetivos.</p>
+                    <p>Desarrollamos estrategias de marketing que te permitan llegar a tu audiencia objetivo y aumentar tus ventas.</p>
+                    <div class="modal-action">
+                        <label for="modal-5" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-5"></label>
+            </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-6" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Desarrollo Web</label>
+            <input type="checkbox" id="modal-6" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Desarrollo Web Personalizado</h3>
+                    <p class="py-4">Desarrollamos sitios web personalizados que se adaptan a tus necesidades.</p>
+                    <p>Utilizamos las últimas tecnologías para crear sitios web rápidos, seguros y escalables.</p>
+                    <div class="modal-action">
+                        <label for="modal-6" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-6"></label>
+            </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-7" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Servicio Técnico</label>
+            <input type="checkbox" id="modal-7" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Servicio Técnico de Alta Calidad</h3>
+                    <p class="py-4">Ofrecemos servicio técnico de alta calidad para tus necesidades.</p>
+                    <p>Nuestro equipo de expertos te brinda soporte técnico para resolver cualquier problema que tengas.</p>
+                    <div class="modal-action">
+                        <label for="modal-7" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-7"></label>
+            </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-8" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Asesoramiento</label>
+            <input type="checkbox" id="modal-8" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Asesoramiento Estratégico</h3>
+                    <p class="py-4">Te brindamos asesoramiento personalizado para el crecimiento de tu negocio.</p>
+                    <p>Nuestro equipo de expertos te guiará en la toma de decisiones estratégicas para alcanzar tus objetivos.</p>
+                    <div class="modal-action">
+                        <label for="modal-8" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-8"></label>
+            </div>
+        </div>
+
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
+            <label for="modal-9" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">SEO</label>
+            <input type="checkbox" id="modal-9" class="modal-toggle" />
+            <div class="modal modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Optimización de Motores de Búsqueda</h3>
+                    <p class="py-4">Mejoramos la visibilidad de tu sitio web en los motores de búsqueda.</p>
+                    <p>Utilizamos técnicas de SEO para aumentar tu tráfico orgánico y mejorar tus resultados en los motores de búsqueda.</p>
+                    <div class="modal-action">
+                        <label for="modal-9" class="btn">Cerrar</label>
+                    </div>
+                </div>
+                <label class="modal-backdrop" for="modal-9"></label>
+            </div>
+        </div>
     </div>
 </div>

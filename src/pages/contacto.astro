@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../sections/NavBar.astro';
+import Footer from '../sections/Footer.astro';
+---
+
+<Layout>
+    <NavBar />
+    <main class="py-1 mt-16 mb-16">
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="m-80 absolute inset-x-20 -top-40 -right-3/4 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0c1aad] to-[#0097c5] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 84.1%, 100% 21.6%, 77.5% 16.9%, 45.5% 0.1%, 80.7% 2%, 72.5% 62.5%, 80.2% 92.4%, 22.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 26.8%, 16.1% 97.7%, 74.1% 44.1%)">               
+                </div>
+            </div>
+            <h1 class="text-5xl text-center text-gray-800 mb-4 font-light mt-8">Contactanos</h1>
+            <h2 class="text-8xl font-light text-center text-gray-900 mb-4">Tienes alguna idea?</h2>
+            <p class="text-center text-2xl text-gray-600 mb-8">Hablemos de tu proyecto! dejanos tus datos y nos pondremos en contacto contigo.</p>
+            <form class="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-lg bg-gradient-to-r from-gray-800 to-sky-800">
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="text" placeholder="Nombre*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="text" placeholder="Apellido*">
+                </div>
+                <div class="mb-4">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="email" placeholder="Correo electronico*">
+                </div>
+                <div class="mb-4">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="text" placeholder="Telefono*">
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="text" placeholder="Puesto*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg" type="text" placeholder="Nombre de la empresa*">
+                </div>
+                <div class="mb-4">
+                    <textarea class="border rounded w-full py-2 px-3 text-gray-700 text-lg" placeholder="Por favor, cuéntanos un poco sobre tus metas, ¿qué esperas lograr con Moon Minds?*"></textarea>
+                </div>
+                <p class="text-sm text-gray-300 mb-4">Agregaremos tus datos personales para que podamos contactarte, de acuerdo a nuestros terminos y condiciones, puedes leerlos <a href="#" class="text-blue-500">aqui</a>.</p>
+                <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded" type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+    <Footer />
+</Layout>

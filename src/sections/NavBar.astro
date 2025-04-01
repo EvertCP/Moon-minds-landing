@@ -16,10 +16,17 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">  
-            <a href="#" class="text-xl font-semibold text-gray-900">Inicio</a>
-            <a href="#" class="text-xl font-semibold text-gray-900">Servicios</a>
-            <a href="#" class="text-xl font-semibold text-gray-900">Sobre Nosotros</a>
-            <a href="#" class="text-xl font-semibold text-gray-900">Contacto</a>
+            <a href="/" class="text-xl font-semibold text-gray-900">Inicio</a>
+            <a href="/servicios" class="text-xl font-semibold text-gray-900">Servicios</a>
+            <div class="relative">
+              <button id="productos-button" class="text-xl font-semibold text-gray-900">Productos</button>
+              <div id="productos-menu" class="hidden absolute bg-white shadow-lg rounded-lg mt-2">
+                <a href="/erp" class="block px-4 py-2 text-gray-800">ERP</a>
+                <a href="/publicidad" class="block px-4 py-2 text-gray-800">Publicidad</a>
+              </div>
+            </div>
+            <a href="/nosotros" class="text-xl font-semibold text-gray-900">Sobre Nosotros</a>
+            <a href="/contacto" class="text-xl font-semibold text-gray-900">Contacto</a>
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -69,4 +76,12 @@
         });
       }
     });
+    const productosButton = document.getElementById('productos-button');
+    const productosMenu = document.getElementById('productos-menu');
+    
+    if (productosButton && productosMenu) {
+      productosButton.addEventListener('click', function() {
+        productosMenu.classList.toggle('hidden');
+      });
+    }
     </script>

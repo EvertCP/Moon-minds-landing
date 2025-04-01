@@ -1,0 +1,21 @@
+        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer w-96">
+            <div class="p-4">
+              <button type="button" class="btn btn-block btn-dark mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Branding</button>
+              <div class="modal fade" id="modal-default" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title" id="modal-title-default">Nos encargamos del branding de tu marca</h6>
+                      <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Te ayudamos a crear un branding que represente tu marca. </p>
+                      <p>Esto puede incluir logos, colores, tipografías, imágenes, y otros elementos visuales que ayudan a identificar y diferenciar tu marca. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
