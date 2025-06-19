@@ -2,7 +2,7 @@
     <header class="absolute inset-x-0 top-0 z-50">
         <nav class="flex items-center justify-between lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Moon Minds</span>
               <img class="h-40 w-auto" src="../assets/moon-minds-letra-azul.png" alt="">
             </a>
@@ -24,6 +24,7 @@
                 <a href="/erp" class="block px-4 py-2 text-gray-800">ERP</a>
                 <a href="/publicidad" class="block px-4 py-2 text-gray-800">Publicidad</a>
                 <a href="/analisis" class="block px-4 py-2 text-gray-800">Análisis de datos</a>
+                <a href="/agentes-virtuales" class="block px-4 py-2 text-gray-800">Agentes virtuales</a>
               </div>
             </div>
             <a href="/nosotros" class="text-xl font-semibold text-gray-900">Sobre Nosotros</a>
@@ -34,10 +35,10 @@
         <div class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-50"></div>
-          <div id="menu-mobile" class="fixed inset-y-0 right-0 z-50 hidden w-full bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div id="menu-mobile" class="fixed inset-y-0 right-0 z-50 hidden bg-white backdrop-blur-md px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <img class="h-40 w-auto" src="../src/assets/moon-minds-letra-azul.png" alt="Moon Minds">
+              <a href="/" class="-m-1.5 p-1.5">
+                <img class="h-40 w-auto" src="../assets/moon-minds-letra-azul.png" alt="Moon Minds">
               </a>
               <button id="menu-button1" type="button" class="rounded-md p-2.5 text-gray-700">
                 <span class="sr-only">Close menu</span>
@@ -49,10 +50,19 @@
             <div class="menu mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Inicio</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Servicio</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sobre nosotros</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contacto</a>
+                  <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Inicio</a>
+                  <a href="/servicios" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Servicio</a>
+                  <div class="relative">
+                    <button id="productos-button" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Productos</button>
+                    <div id="productos-menu" class="hidden absolute bg-white shadow-lg rounded-lg mt-2">
+                      <a href="/erp" class="block px-4 py-2 text-gray-800">ERP</a>
+                      <a href="/publicidad" class="block px-4 py-2 text-gray-800">Publicidad</a>
+                      <a href="/analisis" class="block px-4 py-2 text-gray-800">Análisis de datos</a>
+                      <a href="/agentes-virtuales" class="block px-4 py-2 text-gray-800">Agentes virtuales</a>
+                    </div>
+                  </div>
+                  <a href="/nosotros" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sobre nosotros</a>
+                  <a href="/contacto" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contacto</a>
                 </div>
               </div>
             </div>
@@ -62,27 +72,59 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const openButton = document.querySelector("#menu-button");
-      const closeButton = document.querySelector("#menu-button1");
-      const mobileMenu = document.querySelector("#menu-mobile");
-  
-      if (openButton && closeButton && mobileMenu) {
-        openButton.addEventListener("click", () => {
-          mobileMenu.classList.remove("hidden");
-        });
-  
-        closeButton.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
+  document.addEventListener("DOMContentLoaded", () => {
+    const openButton = document.querySelector("#menu-button");
+    const closeButton = document.querySelector("#menu-button1");
+    const mobileMenu = document.querySelector("#menu-mobile");
+    const backdrop = mobileMenu ? mobileMenu.previousElementSibling : null;
+    let lastScroll = 0;
+
+    function openMenu() {
+      if (mobileMenu) {
+        mobileMenu.classList.remove("hidden");
+        if (backdrop) backdrop.classList.remove("hidden");
+        lastScroll = window.scrollY;
+        document.body.style.overflow = "hidden";
+      }
+    }
+    function closeMenu() {
+      if (mobileMenu) {
+        mobileMenu.classList.add("hidden");
+        if (backdrop) backdrop.classList.add("hidden");
+        document.body.style.overflow = "";
+        window.scrollTo(0, lastScroll);
+      }
+    }
+
+    if (openButton && closeButton && mobileMenu) {
+      openButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        openMenu();
+      });
+      closeButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+    // Cerrar con fondo oscuro
+    if (backdrop) {
+      backdrop.addEventListener("click", closeMenu);
+    }
+    // Cerrar con tecla ESC
+    document.addEventListener("keydown", (e) => {
+      if (!mobileMenu.classList.contains("hidden") && e.key === "Escape") {
+        closeMenu();
       }
     });
+  
+    // Submenú Productos (desktop)
     const productosButton = document.getElementById('productos-button');
     const productosMenu = document.getElementById('productos-menu');
-    
     if (productosButton && productosMenu) {
-      productosButton.addEventListener('click', function() {
+      productosButton.addEventListener('click', (e) => {
+        e.preventDefault();
         productosMenu.classList.toggle('hidden');
       });
     }
-    </script>
+  });
+</script>
