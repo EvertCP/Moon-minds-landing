@@ -4,7 +4,7 @@
           <div class="flex lg:flex-1">
             <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Moon Minds</span>
-              <img class="h-16 w-auto" src="../assets/moon-minds-letra-azul.png" alt="">
+              <img class="h-20 w-auto" src="../assets/moon-minds-letra-azul.png" alt="">
             </a>
           </div>
           <div class="flex lg:hidden" role="dialog" aria-modal="true">
@@ -116,8 +116,47 @@
         closeMenu();
       }
     });
-  
+
     // Submenú Productos (desktop)
+    const productosButtonDesktop = document.getElementById('productos-button');
+    const productosMenuDesktop = document.getElementById('productos-menu');
+    if (productosButtonDesktop && productosMenuDesktop) {
+      // Mostrar al hacer hover
+      productosButtonDesktop.addEventListener('mouseenter', () => {
+        productosMenuDesktop.classList.remove('hidden');
+      });
+      productosMenuDesktop.addEventListener('mouseenter', () => {
+        productosMenuDesktop.classList.remove('hidden');
+      });
+      // Ocultar al salir
+      productosButtonDesktop.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!productosMenuDesktop.matches(':hover') && !productosButtonDesktop.matches(':hover')) {
+            productosMenuDesktop.classList.add('hidden');
+          }
+        }, 100);
+      });
+      productosMenuDesktop.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!productosMenuDesktop.matches(':hover') && !productosButtonDesktop.matches(':hover')) {
+            productosMenuDesktop.classList.add('hidden');
+          }
+        }, 100);
+      });
+      // Mostrar/ocultar al hacer clic
+      productosButtonDesktop.addEventListener('click', (e) => {
+        e.preventDefault();
+        productosMenuDesktop.classList.toggle('hidden');
+      });
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        if (!productosMenuDesktop.contains(e.target) && e.target !== productosButtonDesktop) {
+          productosMenuDesktop.classList.add('hidden');
+        }
+      });
+    }
+
+    // Submenú Productos (mobile)
     const productosButton = document.getElementById('productos-button-mobile');
     const productosMenu = document.getElementById('productos-menu-mobile');
     if (productosButton && productosMenu) {
@@ -125,8 +164,7 @@
         e.stopPropagation();
         productosMenu.classList.toggle('hidden');
       });
-
-      //Cierre del submenú
+      // Cierre del submenú
       document.addEventListener('click', (e) => {
         if (!productosMenu.contains(e.target) && e.target !== productosButton) {
           productosMenu.classList.add('hidden');
