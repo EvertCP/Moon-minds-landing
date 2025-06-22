@@ -53,8 +53,8 @@
                   <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Inicio</a>
                   <a href="/servicios" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Servicio</a>
                   <div class="relative">
-                    <button id="productos-button" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Productos</button>
-                    <div id="productos-menu" class="hidden absolute bg-white shadow-lg rounded-lg mt-2">
+                    <button id="productos-button-mobile" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Productos</button>
+                    <div id="productos-menu-mobile" class="hidden absolute bg-white shadow-lg rounded-lg mt-2">
                       <a href="/erp" class="block px-4 py-2 text-gray-800">ERP</a>
                       <a href="/publicidad" class="block px-4 py-2 text-gray-800">Publicidad</a>
                       <a href="/analisis" class="block px-4 py-2 text-gray-800">Análisis de datos</a>
@@ -118,12 +118,19 @@
     });
   
     // Submenú Productos (desktop)
-    const productosButton = document.getElementById('productos-button');
-    const productosMenu = document.getElementById('productos-menu');
+    const productosButton = document.getElementById('productos-button-mobile');
+    const productosMenu = document.getElementById('productos-menu-mobile');
     if (productosButton && productosMenu) {
       productosButton.addEventListener('click', (e) => {
-        e.preventDefault();
+        e.stopPropagation();
         productosMenu.classList.toggle('hidden');
+      });
+
+      //Cierre del submenú
+      document.addEventListener('click', (e) => {
+        if (!productosMenu.contains(e.target) && e.target !== productosButton) {
+          productosMenu.classList.add('hidden');
+        }
       });
     }
   });
