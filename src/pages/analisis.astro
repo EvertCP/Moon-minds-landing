@@ -2,94 +2,258 @@
 import Layout from '../layouts/Layout.astro';
 import NavBar from '../sections/NavBar.astro';
 import Footer from '../sections/Footer.astro';
+import { Card, CardContent } from "@/components/ui/card"
+import { BadgeWrapper } from "@/components/BadgeWrapper"
+import { Database, BarChart3, Zap, Shield, Eye, Layers, TrendingUp, ChartNoAxesCombined, ChartPie, CircleUser } from 'lucide-react'
+
+const services = [
+  {
+    title: "Recopilación y limpieza de datos",
+    description:
+      "Reunimos datos desde múltiples fuentes y los preparamos para su análisis, garantizando calidad y consistencia en toda la información.",
+    icon: Database,
+    features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
+    color: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-50",
+    img: "../assets/recopilacion.jpg"
+  },
+  {
+    title: "Visualización de datos",
+    description:
+      "Creamos paneles interactivos en PowerBI para monitorear el desempeño de tu negocio en tiempo real con insights accionables.",
+    icon: BarChart3,
+    features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-50",
+    img: "../assets/dashboard.jpg"
+  },
+  {
+    title: "Analisis de comportamiento del cliente",
+    description:
+      "Estudiamos los patrones de compra y preferencias de tus clientes para ayudarte a personalizar campañas y productos.",
+    icon: ChartNoAxesCombined,
+    features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
+    color: "from-green-500 to-cyan-500",
+    bgColor: "bg-green-50",
+    img: "../assets/analisis.jpg"
+  },
+  {
+    title: "Modelos de predicción",
+    description:
+      "Utilizamos herramientas estadísticas para predecir tendencias y resultados futuros basados en datos históricos.",
+    icon: ChartPie,
+    features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
+    color: "from-sky-500 to-blue-500",
+    bgColor: "bg-sky-50",
+    img: "../assets/modelos.jpg"
+  },
+  {
+    title: "Segmentacion de mercado",
+    description:
+      "Identificamos y clasificamos grupos de clientes similares para personalizar campañas y productos.",
+    icon: CircleUser,
+    features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
+    color: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-50",
+    img: "../assets/segmentacion.jpg"
+  },
+  {
+    title: "Optimización de procesos",
+    description:
+      "Detectamos cuellos de botella, pérdidas de eficiencia y oportunidades de mejora para optimizar procesos y mejorar la efectividad.",
+    icon: TrendingUp,
+    features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-50",
+    img: "../assets/optimizacion.jpg"
+  }
+]
+
+const additionalServices = [
+  { icon: Zap, title: "Automatización", description: "Procesos automatizados" },
+  { icon: Shield, title: "Seguridad", description: "Datos protegidos" },
+  { icon: Eye, title: "Monitoreo", description: "Supervisión continua" },
+  { icon: Layers, title: "Integración", description: "Sistemas conectados" },
+]
+
+const benefits = [
+  {
+    icon: "bar-chart-3",
+    title: "Ahorro de recursos",
+    description: "Optimiza el uso de recursos mediante análisis eficientes y automatización de procesos.",
+    color: "bg-blue-50 text-blue-600",
+    borderColor: "border-blue-200",
+  },
+  {
+    icon: "eye",
+    title: "Visualización clara de datos complejos",
+    description: "Transforma información compleja en gráficos y dashboards fáciles de entender.",
+    color: "bg-emerald-50 text-emerald-600",
+    borderColor: "border-emerald-200",
+  },
+  {
+    icon: "trending-up",
+    title: "Ventaja competitiva",
+    description: "Obtén insights únicos que te posicionen por delante de la competencia.",
+    color: "bg-amber-50 text-amber-600",
+    borderColor: "border-amber-200",
+  },
+  {
+    icon: "calendar",
+    title: "Detección de tendencias",
+    description: "Identifica patrones y tendencias emergentes para anticiparte al mercado.",
+    color: "bg-purple-50 text-purple-600",
+    borderColor: "border-purple-200",
+  },
+  {
+    icon: "brain",
+    title: "Decisiones basadas en información real",
+    description: "Toma decisiones estratégicas respaldadas por datos concretos y verificables.",
+    color: "bg-rose-50 text-rose-600",
+    borderColor: "border-rose-200",
+  },
+  {
+    icon: "users",
+    title: "Comprensión del cliente y competencia",
+    description: "Conoce mejor a tu audiencia y analiza el comportamiento de tus competidores.",
+    color: "bg-indigo-50 text-indigo-600",
+    borderColor: "border-indigo-200",
+  },
+]
 ---
 
 <Layout>
     <NavBar />
-    <main class="py-1 mt-2 mb-2 sm:py-6 sm:mt-4 sm:mb-4">
-        <section class="py-6 m-2 sm:py-10 sm:m-14">
+    <main class="py-1 mb-2 sm:py-6 sm:mb-4">
+        <section class="py-6 m-2 mt-2 sm:py-10 sm:m-14">
             <div class="relative isolate px-2 pt-8 sm:px-6 sm:pt-14 lg:px-8 sm:m-14">
                 <div class="m-12 absolute inset-x-0 -top-40 -right-3/4 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"aria-hidden="true">
                     <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0c1aad] to-[#0097c5] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">               
                     </div>
                 </div>
             </div>
-            <div class="container mx-2 px-2 sm:px-6 sm:m-14 flex flex-col items-center">
-                <h1 class="text-6xl md:text-8xl font-medium text-center text-blue-900 mb-6">Qué es el análisis de datos?</h1>
-                <p class="text-2xl md:text-4xl text-gray-700 mb-6 mt-6 text-center">
-                    El análisis de datos es un proceso que permite a las empresas obtener información valiosa sobre sus operaciones y clientes basandose en datos históricos y actuales.
+            <div class="container mx-2 m-8 px-2 sm:px-6 sm:m-24 flex flex-col items-center">
+                <h1 class="text-6xl md:text-8xl font-medium text-center text-black mb-8 mt-8">¿Qué es el <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">análisis de datos</span>?</h1>
+                <p class="text-2xl md:text-4xl text-gray-700 mb-6 mt-8 text-center">
+                    El análisis de datos es un proceso que permite a las empresas obtener <span class="font-semibold text-slate-900">información valiosa</span> sobre sus operaciones y clientes basandose en datos históricos y actuales.
                 </p>
-                <p class="text-2xl md:text-4xl text-gray-700 mb-6 text-center">
-                    Te ayudamos a encontrar la solucion que mas se ajuste a tus necesidades. Somos tu mejor aliado en la potencializacion y crecimiento de tu negocio.
+                <p class="text-2xl md:text-4xl text-gray-700 mb-8 mt-8 text-center">
+                    Transformamos tus datos en <span class="font-semibold text-slate-900"> decisiones estratégicas</span>. A través del analisis de información, te ayudamos a descubrir patrones, oportunidades de mejora y áreas clave para optimizar procesos, ventas y rendimientos general de tu negocio.
                 </p>
-                <button class="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold py-4 px-8 rounded m-6 justify-center mb-20">
+                <button class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:scale-105 rounded m-8">
                     Cotiza tu proyecto
                 </button>
                 <div> 
-                    <div class="flex flex-wrap justify-between gap-4 m-2 sm:gap-6 sm:m-6 mt-10 sm:mt-20">
-                      <h2 class="text-4xl sm:text-6xl md:text-6xl font-semibold text-gray-800 mb-2 sm:mb-4 text-center w-full">Si estas buscando crecer con estructura y visión, estamos listos para ayudarte.</h2>
-                      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
-                        <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-blue-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Recopilación de datos</span>
-                          </div>
-                          <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-green-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/><path d="M16 11V7a4 4 0 00-8 0v4"/><rect x="8" y="11" width="8" height="7" rx="2"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Análisis de datos</span>
-                          </div>
-                          <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-yellow-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7.5 7.5 0 0113 0"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Visualización de datos</span>
-                          </div>
-                          <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-purple-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Detección de tendencias.</span>
-                          </div>
-                          <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-pink-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M5 7h14M5 11h14M5 15h14"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Toma de decisiones</span>
-                          </div>
-                          <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col items-center hover:shadow-xl transition w-full">
-                            <svg class="w-10 h-10 text-pink-500 mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M5 7h14M5 11h14M5 15h14"/></svg>
-                            <span class="font-semibold text-lg text-gray-800">Optimización de procesos</span>
+                  <div class="container mx-auto px-4 md:px-6 m-14">
+                    <div class="text-center mb-16">
+                      <h2 class="text-4xl md:text-6xl font-medium text-gray-900 mb-4">
+                        Ventajas del análisis de datos
+                      </h2>
+                      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Descubre cómo el análisis de datos puede transformar tu negocio y llevarlo al siguiente nivel
+                      </p>
+                    </div>
+                
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {benefits.map((benefit) => (
+                        <div class={`group relative bg-white rounded-2xl p-8 shadow-sm border-2 ${benefit.borderColor} hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
+                          <div class="flex flex-col items-center text-center space-y-4">
+                            <div class={`w-16 h-16 rounded-2xl ${benefit.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                {benefit.icon === "bar-chart-3" && (
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                )}
+                                {benefit.icon === "eye" && (
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                )}
+                                {benefit.icon === "trending-up" && (
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                )}
+                                {benefit.icon === "calendar" && (
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                )}
+                                {benefit.icon === "brain" && (
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                )}
+                                {benefit.icon === "users" && (
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                                )}
+                              </svg>
+                            </div>
+                
+                            <h3 class="text-xl font-semibold text-gray-900 leading-tight">{benefit.title}</h3>
+                
+                            <p class="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
                           </div>
                         </div>
+                      ))}
+                    </div>
+                
+                    </div>
+                    <div class="container mx-auto px-4 md:px-6">
+                      {/* Header */}
+                      <div class="text-center mb-16">
+                        <BadgeWrapper variant="outline" class="mb-4 px-4 py-2 text-sm font-medium" client:load>
+                          Nuestros Servicios
+                        </BadgeWrapper>
+                        <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+                          Servicios{" "}
+                          <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            incluidos
+                          </span>
+                        </h2>
+                        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                          Ofrecemos una suite completa de servicios de análisis de datos para transformar tu información en ventaja
+                          competitiva
+                        </p>
                       </div>
-                    </div>
-                    </div>
-                    <div class="flex flex-wrap justify-center gap-2 m-2 sm:m-6 mt-10 sm:mt-20">
-                      <h2 class="text-4xl sm:text-6xl font-semibold text-gray-800 mb-2 text-center w-full">Beneficios del análisis de datos</h2>
-                      <div class="flex flex-col gap-2 w-full">
-                        <div class="bg-white rounded-2xl p-4 sm:p-8 flex flex-col md:flex-row items-center justify-between transition gap-4 sm:gap-8 m-2 sm:m-4 w-full">
-                          <img src="/assets/ERP-1.jpg" alt="Mejora la eficiencia operativa" class="w-full max-w-xs h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 object-contain rounded-xl shadow-lg mb-4 md:mb-0" />
-                          <div class="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left max-w-xl">
-                            <h3 class="font-bold text-5xl text-blue-900 mb-4">Identificar oportunidades reales de crecimiento</h3>
-                            <p class="text-gray-700 text-2xl leading-relaxed mb-2">Con el análisis de datos, puedes identificar tendencias y patrones en tus datos que te permiten identificar oportunidades reales de crecimiento.</p>
-                          </div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-8 flex flex-col md:flex-row-reverse items-center justify-between transition gap-8 m-4">
-                          <img src="/assets/ERP-2.jpg" alt="Facilita la toma de decisiones informadas" class="w-64 h-64 md:w-96 md:h-96 object-contain rounded-xl shadow-lg" />
-                          <div class="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right max-w-xl">
-                            <h3 class="font-bold text-5xl text-blue-900 mb-4">Mejor entendimiento del mercado y de la competencia</h3>
-                            <p class="text-gray-700 text-2xl leading-relaxed mb-2">Con el análisis de datos, puedes obtener información valiosa sobre tus competidores y detectar tendencias de consumo, lo que te permite tomar decisiones informadas basadas en datos precisos y actualizados.</p>
-                          </div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-4 sm:p-8 flex flex-col md:flex-row items-center justify-between transition gap-4 sm:gap-8 m-2 sm:m-4 w-full">
-                          <img src="/assets/ERP-3.jpg" alt="Reduce costos operativos" class="w-64 h-64 md:w-96 md:h-96 object-contain rounded-xl shadow-lg" />
-                          <div class="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left max-w-xl">
-                            <h3 class="font-bold text-5xl text-blue-900 mb-4">Mejor entendimiento de tus clientes</h3>
-                            <p class="text-gray-700 text-2xl leading-relaxed mb-2">Puedes obtener información valiosa sobre tus clientes, lo que te permite tomar decisiones informadas basadas en datos precisos y actualizados.</p>
-                          </div>
-                        </div>
-                        <div class="bg-white rounded-2xl p-8 flex flex-col md:flex-row-reverse items-center justify-between transition gap-8 m-4">
-                          <img src="/assets/ERP-4.jpg" alt="Mejora la colaboración entre departamentos" class="w-64 h-64 md:w-96 md:h-96 object-contain rounded-xl shadow-lg" />
-                          <div class="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right max-w-xl">
-                            <h3 class="font-bold text-5xl text-blue-900 mb-4">Insights claros y accionables</h3>
-                            <p class="text-gray-700 text-2xl leading-relaxed mb-2">Mejoraremos la compresión que tienes sobre tu negocio, el mercado y tus competidores basandonos en datos precisos y actualizados.</p>
-                          </div>
-                        </div>
+                  
+                      {/* Main Services Grid */}
+                      <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        {services.map((service, index) => (
+                          <Card
+                            className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden"
+                          >
+                            <CardContent className="p-0">
+                              <div className={`${service.bgColor} p-8 relative overflow-hidden`}>
+                                {/* Background decoration */}
+                                <div class="absolute top-0 right-0 w-32 h-32">
+                                  <service.icon className="w-full h-full stroke-black/20" />
+                                </div>
+                  
+                                {/* Icon */}
+                                <div
+                                  class={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-6 shadow-lg`}
+                                >
+                                  <service.icon className="w-8 h-8" />
+                                </div>
+                  
+                                {/* Content */}
+                                <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                                  {service.title}
+                                </h3>
+                                <p class="text-slate-700 text-lg leading-relaxed mb-6">{service.description}</p>
+                  
+                                {/* Features */}
+                                <div class="space-y-3">
+                                  {service.features.map((feature, featureIndex) => (
+                                    <div class="flex items-center space-x-3">
+                                      <div class={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color}`}></div>
+                                      <span class="text-slate-600 font-medium">{feature}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                                {/* images */}
+                              {service.img && (
+                                <div class="w-full h-64">
+                                  <img src={service.img} alt={service.title} class="w-full h-full object-cover" />
+                                </div>
+                              )}
+                            </CardContent>
+                          </Card>
+                        ))}
                       </div>
-                    </div>
                   </div>
             </div>
         </section>
