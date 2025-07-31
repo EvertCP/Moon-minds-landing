@@ -1,138 +1,155 @@
 ---
-import { Image } from "astro:assets";
+import { BarChart3, Zap, RefreshCw, Palette, Globe, Database, Megaphone, Wrench, Users, Code, Building2 } from 'lucide-react';
+// Datos de los beneficios
+const benefits = [
+  {
+    icon: BarChart3,
+    title: "Resultados relevantes y de Alto Valor",
+    description: "Soluciones que generan impacto medible y aportan valor real a tu negocio desde el primer momento.",
+  },
+  {
+    icon: Zap,
+    title: "Agilidad que reduce costos y riesgos",
+    description: "Metodologías ágiles que permiten adaptación rápida y reducen significativamente los riesgos del proyecto.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Adaptabilidad y mejora continua",
+    description: "Capacidad de evolución constante, ajustándonos a las necesidades cambiantes de tu negocio.",
+  },
+];
+
+// Datos de los servicios
+const services = [
+  {
+    icon: Palette,
+    title: "Branding",
+    description: "Creamos identidades visuales únicas que conectan con tu audiencia y fortalecen tu presencia en el mercado.",
+  },
+  {
+    icon: Globe,
+    title: "Desarrollo Web",
+    description: "Sitios web modernos, responsivos y optimizados que ofrecen experiencias excepcionales a tus usuarios.",
+  },
+  {
+    icon: Database,
+    title: "Análisis de Datos",
+    description: "Transformamos datos en insights valiosos para la toma de decisiones estratégicas de tu empresa.",
+  },
+  {
+    icon: Megaphone,
+    title: "Publicidad",
+    description: "Estrategias de marketing digital efectivas que maximizan tu alcance y retorno de inversión.",
+  },
+  {
+    icon: Wrench,
+    title: "Servicio Técnico",
+    description: "Soporte técnico especializado para mantener tus sistemas funcionando de manera óptima.",
+  },
+  {
+    icon: Users,
+    title: "Asesoramiento",
+    description: "Consultoría estratégica personalizada para impulsar el crecimiento y la innovación en tu negocio.",
+  },
+  {
+    icon: Code,
+    title: "Desarrollo de Software",
+    description: "Soluciones de software a medida que automatizan procesos y mejoran la eficiencia operativa.",
+  },
+  {
+    icon: Building2,
+    title: "Sistemas ERP",
+    description: "Implementación de sistemas ERP que integran y optimizan todos los procesos de tu empresa.",
+  },
+];
 ---
 
-<div data-theme="light">
-    <h2 class="text-slate-600 leading-normal font-medium text-6xl md:text-8xl flex justify-center">Nuestros servicios</h2>
-    <span class="text-slate-600 leading-normal font-light text-xl md:text-3xl m-4 flex text-center">Elevaremos tu marca por un ciclo donde analizaremos, crearemos y potenciaremos tu producto para generar los resultados esperados.</span>
-
-    <div class="flex flex-wrap justify-center gap-10 lg:gap-10 m-6 lg:m-2 lg:px-40">
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-2" class="btn w-full text-slate-800 text-xl font-medium bg-transparent hover:bg-slate-100 border-none p-4">Branding</label>         
-            <input type="checkbox" id="modal-2" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Nos encargamos del branding de tu marca</h3>
-                    <p class="py-4">Te ayudamos a crear un branding que represente tu marca.</p>
-                    <p>Esto puede incluir logos, colores, tipografías, imágenes, y otros elementos visuales que ayudan a identificar y diferenciar tu marca.</p>
-                    <div class="modal-action">
-                        <label for="modal-2" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-2"></label>
-            </div>
+<div class="w-full">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+          Te ofrecemos soluciones <span class="text-blue-600">personalizadas</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Desarrollamos soluciones centradas en el usuario. Combinamos Design Thinking y metodologías Ágiles para
+          crear soluciones rápidas, efectivas y orientadas a las necesidades reales de tus proyectos.
+        </p>
+        <button class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          Cotiza tu proyecto
+        </button>
+      </div>
+    </section>
+  
+    <!-- Why Work With Us Section -->
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            ¿Por qué trabajar con <span class="text-blue-400">nosotros</span>?
+          </h2>
+          <p class="text-slate-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+            Somos innovación centrada en el usuario. Combinamos Design Thinking y metodologías Ágiles para crear
+            soluciones rápidas, efectivas y orientadas a las necesidades reales de tus usuarios.
+          </p>
         </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-3" class="btn w-full text-slate-800 text-xl font-medium bg-transparent hover:bg-slate-100 border-none p-4">Diseño Web</label>
-            <input type="checkbox" id="modal-3" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Diseño Web Profesional</h3>
-                    <p class="py-4">Nos encargamos del diseño de tu página web.</p>
-                    <p>Creamos sitios web modernos, responsivos y optimizados para brindar la mejor experiencia a tus usuarios.</p>
-                    <div class="modal-action">
-                        <label for="modal-3" class="btn">Cerrar</label>
-                    </div>
+  
+        <div class="grid md:grid-cols-3 gap-8">
+          {benefits.map((benefit) => (
+            <div class="text-center group">
+              <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full transition-all duration-300 hover:bg-slate-700/50 hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2">
+                <div class="flex justify-center mb-6">
+                  <div class="bg-blue-500/10 p-4 rounded-full group-hover:bg-blue-500/20 transition-colors duration-300">
+                    <benefit.icon className="w-8 h-8 text-blue-400" />
+                  </div>
                 </div>
-                <label class="modal-backdrop" for="modal-3"></label>
+                <h3 class="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
+                <p class="text-slate-300 leading-relaxed">{benefit.description}</p>
+              </div>
             </div>
+          ))}
         </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-4" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Análisis de Datos</label>
-            <input type="checkbox" id="modal-4" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Análisis de Datos Avanzado</h3>
-                    <p class="py-4">Analizamos los datos de tu negocio para obtener insights valiosos.</p>
-                    <p>Utilizamos herramientas modernas para transformar datos en decisiones estratégicas que impulsen tu crecimiento.</p>
-                    <div class="modal-action">
-                        <label for="modal-4" class="btn">Cerrar</label>
-                    </div>
+      </div>
+    </section>
+  
+    <!-- Services Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+            Nuestros <span class="text-blue-600">Servicios</span>
+          </h2>
+          <p class="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Elevamos tu marca por un ciclo donde analizaremos, crearemos y
+            potenciaremos tu producto para generar los resultados esperados.
+          </p>
+        </div>
+  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service) => (
+            <div class="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:border-blue-300 hover:-translate-y-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="bg-blue-50 p-2 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
+                  <service.icon className="w-8 h-8 text-blue-400" />
                 </div>
-                <label class="modal-backdrop" for="modal-4"></label>
+                <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
+              </div>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                {service.description}
+              </p>
             </div>
+          ))}
         </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-5" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Publicidad</label>
-            <input type="checkbox" id="modal-5" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Publicidad Efectiva</h3>
-                    <p class="py-4">Creamos campañas publicitarias que te ayuden a alcanzar tus objetivos.</p>
-                    <p>Desarrollamos estrategias de marketing que te permitan llegar a tu audiencia objetivo y aumentar tus ventas.</p>
-                    <div class="modal-action">
-                        <label for="modal-5" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-5"></label>
-            </div>
-        </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-6" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Desarrollo Web</label>
-            <input type="checkbox" id="modal-6" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Desarrollo Web Personalizado</h3>
-                    <p class="py-4">Desarrollamos sitios web personalizados que se adaptan a tus necesidades.</p>
-                    <p>Utilizamos las últimas tecnologías para crear sitios web rápidos, seguros y escalables.</p>
-                    <div class="modal-action">
-                        <label for="modal-6" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-6"></label>
-            </div>
-        </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-7" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Servicio Técnico</label>
-            <input type="checkbox" id="modal-7" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Servicio Técnico de Alta Calidad</h3>
-                    <p class="py-4">Ofrecemos servicio técnico de alta calidad para tus necesidades.</p>
-                    <p>Nuestro equipo de expertos te brinda soporte técnico para resolver cualquier problema que tengas.</p>
-                    <div class="modal-action">
-                        <label for="modal-7" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-7"></label>
-            </div>
-        </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-8" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">Asesoramiento</label>
-            <input type="checkbox" id="modal-8" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Asesoramiento Estratégico</h3>
-                    <p class="py-4">Te brindamos asesoramiento personalizado para el crecimiento de tu negocio.</p>
-                    <p>Nuestro equipo de expertos te guiará en la toma de decisiones estratégicas para alcanzar tus objetivos.</p>
-                    <div class="modal-action">
-                        <label for="modal-8" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-8"></label>
-            </div>
-        </div>
-
-        <div class="relative my-6 bg-white shadow-sm border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-lg transition-all w-96">
-            <label for="modal-9" class="btn w-full text-slate-800 text-xl font-semibold bg-transparent hover:bg-slate-100 border-none p-4">SEO</label>
-            <input type="checkbox" id="modal-9" class="modal-toggle" />
-            <div class="modal modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Optimización de Motores de Búsqueda</h3>
-                    <p class="py-4">Mejoramos la visibilidad de tu sitio web en los motores de búsqueda.</p>
-                    <p>Utilizamos técnicas de SEO para aumentar tu tráfico orgánico y mejorar tus resultados en los motores de búsqueda.</p>
-                    <div class="modal-action">
-                        <label for="modal-9" class="btn">Cerrar</label>
-                    </div>
-                </div>
-                <label class="modal-backdrop" for="modal-9"></label>
-            </div>
-        </div>
-    </div>
-</div>
+      </div>
+    </section>
+  </div>
+  
+  <script>
+    // Script para cargar los iconos de Lucide
+    import('https://unpkg.com/lucide@latest/dist/umd/lucide.js').then((lucide) => {
+      lucide.createIcons();
+    });
+  </script>
+  
