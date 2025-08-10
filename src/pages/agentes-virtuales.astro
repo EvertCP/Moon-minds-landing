@@ -4,13 +4,13 @@ import NavBar from '../sections/NavBar.astro';
 import Footer from '../sections/Footer.astro';
 import { Card, CardContent } from "@/components/ui/card"
 import { BadgeWrapper } from "@/components/BadgeWrapper"
-import { Database, BarChart3, Calendar, Brain, Zap, Shield, Eye, Layers, TrendingUp, ChartNoAxesCombined, ChartPie, CircleUser } from 'lucide-react'
+import { Database, BarChart3, Calendar, Brain, Zap, CircleDollarSign, Eye, Layers, TrendingUp, ChartPie, CircleUser } from 'lucide-react'
 
 const  services = [
   {
     title: "Automatización procesos",
     description:
-      "Optimiza los procesos de negocio y reduce los tiempos de respuesta.",
+      "Optimiza los procesos de negocio y reduce los tiempos de respuesta automatizando las tareas repetitivas.",
     icon: Database,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-blue-500 to-cyan-500",
@@ -31,7 +31,7 @@ const  services = [
     title: "Procesar pedidos y pagos",
     description:
       "Ayuda con el procesamiento de pedidos y pagos, aguilizando la experiencia del usuario.",
-    icon: Calendar,
+    icon: CircleDollarSign,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-green-500 to-cyan-500",
     bgColor: "bg-green-50",
@@ -41,7 +41,7 @@ const  services = [
     title: "Programar citas",
     description:
       "Ayuda a programar citas con los clientes, mejorando la productividad dentro de la empresa.",
-    icon: Shield,
+    icon: Calendar,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-sky-500 to-blue-500",
     bgColor: "bg-sky-50",

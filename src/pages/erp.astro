@@ -4,7 +4,7 @@ import NavBar from '../sections/NavBar.astro';
 import Footer from '../sections/Footer.astro';
 import { Card, CardContent } from "@/components/ui/card"
 import { BadgeWrapper } from "@/components/BadgeWrapper"
-import { Database, BarChart3, Calendar, Brain, Zap, Shield, Eye, Layers, TrendingUp, ChartNoAxesCombined, ChartPie, CircleUser } from 'lucide-react'
+import { Database, BarChart3, Calendar, Brain, Users, Shield, Eye, TrendingUp, ChartNoAxesCombined, ChartPie, CircleUser } from 'lucide-react'
 
 const services = [
   {
@@ -20,7 +20,7 @@ const services = [
   {
     title: "Contabilidad y finanzas",
     description:
-      "Contabilidad y finanzas",
+      "Te ayuda a gestionar tus finanzas de manera centralizada y eficiente, lo que te permite mejorar la eficiencia de tus operaciones.",
     icon: BarChart3,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-purple-500 to-pink-500",
@@ -30,8 +30,8 @@ const services = [
   {
     title: "Gestión de recursos humanos",
     description:
-      "Gestión de recursos humanos",
-    icon: BarChart3,
+      "Gestiona los recursos humanos de manera eficiente, optimizando la productividad y mejorando la calidad de los servicios.",
+    icon: Users,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-green-500 to-cyan-500",
     bgColor: "bg-green-50",
@@ -40,7 +40,7 @@ const services = [
   {
     title: "Gestión de la cadena de suministro",
     description:
-      "Gestión de la cadena de suministro",
+      "Opera la cadena de suministros para mejorar los procesos de producción y distribución.",
     icon: ChartPie,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-sky-500 to-blue-500",
@@ -50,7 +50,7 @@ const services = [
   {
     title: "Gestión de proyectos",
     description:
-      "Gestión de proyectos",
+      "Obten una visión general de tus proyectos y sus estados de manera centralizada y eficiente.",
     icon: ChartNoAxesCombined,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-indigo-500 to-pink-500",
@@ -60,7 +60,7 @@ const services = [
   {
     title: "Punto de venta",
     description:
-      "Punto de venta",
+      "Gestiona los puntos de venta de manera eficiente, optimizando la productividad y mejorando la calidad de los servicios.",
     icon: BarChart3,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-sky-500 to-blue-500",
@@ -70,7 +70,7 @@ const services = [
   {
     title: "Gestión de clientes",
     description:
-      "Gestión de clientes",
+      "Controla tu cartera de clientes, gestionando sus datos y historial de compras.",
     icon: CircleUser,
     features: ["Dashboards interactivos", "Reportes en tiempo real", "Análisis predictivo"],
     color: "from-purple-500 to-pink-500",

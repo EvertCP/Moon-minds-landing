@@ -4,40 +4,40 @@ import NavBar from '../sections/NavBar.astro';
 import Footer from '../sections/Footer.astro';
 import { Card, CardContent } from "@/components/ui/card"
 import { BadgeWrapper } from "@/components/BadgeWrapper"
-import { Database, BarChart3, Calendar, Brain, Zap, Shield, Eye, Layers, TrendingUp, ChartNoAxesCombined, ChartPie, CircleUser } from 'lucide-react'
+import { Airplay, BarChart3, Calendar, Brain, Zap, Shield, Eye, TrendingUp, Video, CircleUser, Camera, Film } from 'lucide-react'
 
 const services = [
   {
     title: "Fotografía y grabación profesional",
-    description: "",
-    icon: Database,
+    description: "Creamos contenido de calidad para tus redes sociales y eventos.",
+    icon: Camera,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-50",
-    img: "../assets/inventario.jpg"
+    img: "../assets/fotografia.jpg"
   },
   {
     title: "Edición de video profesional",
     description: "Adaptamos el material audiovisual a distintos formatos para optimizar su difusion.",
-    icon: TrendingUp,
+    icon: Film,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-purple-500 to-pink-500",
     bgColor: "bg-purple-50",
-    img: "../assets/inventario.jpg"
+    img: "../assets/edicion.jpg"
   },
   {
     title: "Transmisión de eventos en vivo (streaming)",
     description: "Produccion y difusion profesional de eventos virtuales o presenciales.",
-    icon: ChartNoAxesCombined,
+    icon: Airplay,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-green-500 to-cyan-500",
     bgColor: "bg-green-50",
-    img: "../assets/inventario.jpg"
+    img: "../assets/streaming.jpg"
   },
   {
     title: "Direccion creativa de proyectos multimedia",
     description: "Ideacion y supervision creativa de piezas audio visuales alineadas con tu identidad.",
-    icon: ChartPie,
+    icon: Video,
     features: ["Integración de múltiples fuentes", "Limpieza automatizada", "Validación de calidad"],
     color: "from-sky-500 to-blue-500",
     bgColor: "bg-sky-50",
