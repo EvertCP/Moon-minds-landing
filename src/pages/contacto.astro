@@ -15,28 +15,108 @@ import Footer from '../sections/Footer.astro';
             <h1 class="text-xl text-center text-gray-800 mb-4 font-light mt-8">Contáctanos</h1>
             <h2 class="text-6xl font-light text-center text-gray-900 mb-4">¿Tienes alguna idea?</h2>
             <p class="text-center text-xl text-gray-600 mb-8"> <span class="font-bold">¡Hablanos de tu proyecto!</span> <br> Déjanos tus datos y nos pondremos en contacto contigo.</p>
-            <form class="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-lg">
+            <form id="contact-form" class="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-lg" action="#" method="post" onsubmit="return false" data-service-id={import.meta.env.PUBLIC_EMAILJS_SERVICE_ID} data-template-id={import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID} data-public-key={import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY}>
                 <div class="grid grid-cols-2 gap-4 mb-4">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" placeholder="Nombre*">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" placeholder="Apellido*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" name="nombre" autocomplete="given-name" placeholder="Nombre*" required>
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" name="apellido" autocomplete="family-name" placeholder="Apellido*" required>
                 </div>
                 <div class="mb-4">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="email" placeholder="Correo electronico*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="email" name="email" autocomplete="email" placeholder="Correo electronico*" required>
                 </div>
                 <div class="mb-4">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" placeholder="Telefono*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="tel" name="telefono" autocomplete="tel" placeholder="Telefono*" required>
                 </div>
                 <div class="grid grid-cols-2 gap-4 mb-4">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" placeholder="Puesto*">
-                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" placeholder="Nombre de la empresa*">
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" name="puesto" placeholder="Puesto*" required>
+                    <input class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" type="text" name="empresa" autocomplete="organization" placeholder="Nombre de la empresa*" required>
                 </div>
                 <div class="mb-4">
-                    <textarea class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" placeholder="Por favor, cuéntanos un poco sobre tus metas, ¿qué esperas lograr con Moon Minds?*"></textarea>
+                    <textarea class="border rounded w-full py-2 px-3 text-gray-700 text-lg bg-gray-50" name="mensaje" placeholder="Por favor, cuéntanos un poco sobre tus metas, ¿qué esperas lograr con Moon Minds?*" required></textarea>
                 </div>
+                <p id="contact-status" class="text-sm text-gray-600 mb-4 hidden"></p>
                 <p class="text-sm text-gray-300 mb-4">Agregaremos tus datos personales para que podamos contactarte, de acuerdo a nuestros terminos y condiciones, puedes leerlos <a href="/terminos" class="text-orange-500">aqui</a>.</p>
-                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" type="submit">Enviar</button>
+                <button id="contact-submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" type="button">Enviar</button>
             </form>
         </div>
     </main>
     <Footer />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('contact-status');
+        const submitBtn = document.getElementById('contact-submit');
+
+        function setStatus(message, type) {
+          if (!statusEl) return;
+          statusEl.textContent = message;
+          statusEl.classList.remove('hidden');
+          statusEl.classList.remove('text-red-600', 'text-green-600', 'text-gray-600');
+          if (type === 'error') statusEl.classList.add('text-red-600');
+          if (type === 'success') statusEl.classList.add('text-green-600');
+          if (type === 'info') statusEl.classList.add('text-gray-600');
+        }
+
+        if (!form || !submitBtn) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+        });
+
+        submitBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+
+          const SERVICE_ID = form.dataset.serviceId || '';
+          const TEMPLATE_ID = form.dataset.templateId || '';
+          const PUBLIC_KEY = form.dataset.publicKey || '';
+
+          if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+            setStatus('Falta configurar EmailJS (PUBLIC_EMAILJS_SERVICE_ID / PUBLIC_EMAILJS_TEMPLATE_ID / PUBLIC_EMAILJS_PUBLIC_KEY).', 'error');
+            return;
+          }
+
+          const data = new FormData(form);
+          const template_params = {
+            nombre: String(data.get('nombre') || ''),
+            apellido: String(data.get('apellido') || ''),
+            email: String(data.get('email') || ''),
+            telefono: String(data.get('telefono') || ''),
+            puesto: String(data.get('puesto') || ''),
+            empresa: String(data.get('empresa') || ''),
+            mensaje: String(data.get('mensaje') || ''),
+          };
+
+          try {
+            submitBtn.setAttribute('disabled', 'true');
+            setStatus('Enviando...', 'info');
+
+            const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                service_id: SERVICE_ID,
+                template_id: TEMPLATE_ID,
+                user_id: PUBLIC_KEY,
+                template_params,
+              }),
+            });
+
+            if (!res.ok) {
+              const bodyText = await res.text().catch(() => '');
+              console.error('EmailJS response body:', bodyText);
+              throw new Error('EmailJS HTTP ' + res.status + (bodyText ? ' - ' + bodyText : ''));
+            }
+
+            setStatus('¡Listo! Recibimos tu mensaje y te contactaremos pronto.', 'success');
+            form.reset();
+          } catch (err) {
+            console.error('EmailJS error:', err);
+            setStatus('No se pudo enviar el mensaje. Intenta de nuevo en unos minutos.', 'error');
+          } finally {
+            submitBtn.removeAttribute('disabled');
+          }
+        });
+      });
+    </script>
 </Layout>
